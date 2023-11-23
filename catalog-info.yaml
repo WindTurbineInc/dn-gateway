@@ -1,0 +1,30 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: dn-poi-gateway-app-dev
+  annotations:
+    argocd/app-name: dn-poi-gateway-app-dev
+    backstage.io/kubernetes-id: dn-poi-gateway-app
+    backstage.io/kubernetes-namespace: dn
+    backstage.io/techdocs-ref: dir:.
+    github.com/project-slug: WindTurbineInc/dn-gateway
+    janus-idp.io/tekton-enabled: 'true'
+  tags:
+    - java
+    - quarkus
+    - maven
+    - workshop
+  links:
+    - url: https://console-openshift-console.apps.wearedevs.rl97.p1.openshiftapps.com/dev-pipelines/ns/dn/
+      title: Pipelines
+      icon: web
+    - url: https://console-openshift-console.apps.wearedevs.rl97.p1.openshiftapps.com/k8s/ns/dn/deployments/dn-poi-gateway-app
+      title: Deployment
+      icon: web
+    - url: https://devspaces.apps.wearedevs.rl97.p1.openshiftapps.com/#https://github.com/WindTurbineInc/dn-gateway?che-editor=che-incubator/che-code/latest&devfilePath=.devfile-vscode.yaml
+      title: OpenShift Dev Spaces (VS Code)
+      icon: web
+spec:
+  type: service
+  lifecycle: production
+  owner: "user:default/lordofthejars"
